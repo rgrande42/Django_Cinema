@@ -1,0 +1,39 @@
+{% extends 'usuario/base.html' %}
+{% load static %}
+
+{% block titulo %} Filmix_Inicio_Sesion {% endblock titulo %}
+
+{% block main1 %}
+
+    <form method="POST" id="form-iniciar">
+        <div class="container-form">
+            <img src="{% static 'usuario/img/logo/logo_vertical.png' %}" class="logo-form" alt="">
+
+            {% csrf_token %}
+
+            {% if mensaje %}
+            
+            <div class="alerta-1">
+                {{mensaje}}
+            </div>
+
+            {% endif %}
+
+            <div class="cont-input">
+                {{form.username}}
+            </div>
+
+            <div class="cont-input">
+                {{form.password}}
+            </div>
+
+            <button type="submit" class="btn-form"> Iniciar Sesión </button>
+
+            
+            <p>¿No tienes una cuenta? <a href="{% url 'registrarse' %}" class="link-form">Registrarse</a></p>
+        </div>
+    </form>
+    </div>
+
+
+{% endblock main1 %}

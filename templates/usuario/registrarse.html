@@ -1,0 +1,43 @@
+{% extends 'usuario/base.html' %}
+{% load static %}
+
+{% block titulo %} Filmix_Registrarse {% endblock titulo %}
+
+{% block main1 %}
+
+    <div class="container">
+
+        <form action="{% url 'registrarse' %}" method="POST" id="form-registrar">
+            <div class="container-form">
+                <img src="{% static 'usuario/img/logo/logo_vertical.png' %}" class="logo-form" alt="">
+
+                {% csrf_token %}
+
+                {% if mensaje_exito %}
+                
+                <div class="exito-1">
+                    {{mensaje_exito}}
+                </div>
+
+                {% endif %}
+
+                {% if mensaje_error %}
+                
+                <div class="alerta-1">
+                    {{mensaje_error}}
+                </div>
+
+                {% endif %}
+
+                {{formulario_1}}
+
+                <button type="submit" class="btn-form"> Registrarse </button>
+
+                <p>Al registrarte, aceptas nuestras condiciones de uso y política de privacidad.</p>
+                <p>¿Ya tienes una cuenta? <a href="{% url 'inicio_sesion' %}" class="link-form">Iniciar sesión</a></p>
+            </div>
+        </form>
+    </div>
+
+
+{% endblock main1 %}
