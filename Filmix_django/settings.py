@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jl8&sree!p%wb3bw2$c3f0qql41(8f1@g&-#z&=*)h8cpvv+_e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['rgrande.pythonanywhere.com']
 
 
 # Application definition
@@ -79,13 +79,20 @@ WSGI_APPLICATION = 'Filmix_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'filmix_django',
-        'USER': 'postgres',
-        # 'PASSWORD': 'filmix_1234',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'rgrande$filmix_django',
+        'USER': 'rgrande',
         'PASSWORD': 'Quim1402',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'HOST': 'rgrande.mysql.pythonanywhere-services.com',
+
+        # Esto era lo que tenía antes de subirlo a PythonAnywhere
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'NAME': 'filmix_django',
+        #'USER': 'postgres',
+        ## 'PASSWORD': 'filmix_1234',
+        #'PASSWORD': 'Quim1402',
+        #'HOST': '127.0.0.1',
+        #'PORT': '5432',
     }
 }
 
